@@ -4,7 +4,7 @@
   "description": "app para descripcion de modulos",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MHCelso/appnode/issues"
   },
-  "homepage": "https://github.com/MHCelso/appnode#readme"
+  "homepage": "https://github.com/MHCelso/appnode#readme",
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
 }
