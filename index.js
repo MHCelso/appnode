@@ -11,9 +11,14 @@ module.exports = async function (config) {
   const AgentModel = setupAgentModel(config)
   const MetricModel = setupMetricModel(config)
   AgentModel.hasMany(MetricModel)
-  MetricModel.begingsTo(AgentModel)
+  MetricModel.belongsTo(AgentModel)
   // realiza promesa conectar a la BD
   await sequelize.authenticate()
+
+  if (config.setup) {
+    await sequelize.sync({ force: true })
+  }
+
   // sequelize.sync();
   const Agent = {}
   const Metric = {}
